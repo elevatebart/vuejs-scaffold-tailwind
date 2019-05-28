@@ -1,6 +1,11 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+
+import Home from "@/views/Home.vue";
+import Navbar from "@/views/NavBar.vue";
+import router from "@/configs/router";
+
+import auth from "@/middleware/auth";
 
 Vue.use(Router);
 
@@ -9,18 +14,14 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: Home
-    },
-    {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      ...router.home,
+      meta: {
+        middleware: [auth]
+      },
+      components: {
+        nav: Navbar,
+        default: Home
+      }
     }
   ]
 });
