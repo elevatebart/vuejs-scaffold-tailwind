@@ -3,6 +3,7 @@ import Router from "vue-router";
 
 import Home from "@/views/Home.vue";
 import Navbar from "@/views/NavBar.vue";
+import Profile from "@/views/Profile.vue";
 import router from "@/configs/router";
 
 import auth from "@/middleware/auth";
@@ -21,6 +22,16 @@ export default new Router({
       components: {
         nav: Navbar,
         default: Home
+      }
+    },
+    {
+      ...router.profile,
+      props: true,
+      meta: {
+        middleware: [auth]
+      },
+      components: {
+        default: Profile
       }
     }
   ]
