@@ -10,9 +10,9 @@
     }"
   >
     <!-- @slot Use this slot for icon -->
-    <slot name="icon" />
+    <slot name="icon"/>
     <!-- @slot Default slot -->
-    <slot name="default" />
+    <slot name="default"/>
   </button>
 </template>
 
@@ -89,62 +89,54 @@ export default {
 </style>
 
 <docs>
-  <br />
-  <br />
-  <div >
-    <h2>Colors Button</h2>
-    <div class="flex inline-flex w-full">
-    <Button>
-      <template #icon>
-        <img
-          class="text-gray-500 w-4 h-4 mr-2"
-          src="~@/assets/svg/info.svg"
-        />
-      </template>
-      <span class="hidden md:block">Infos</span>
-    </Button>
-    <Button red>
-      <template #icon>
-        <img
-          class="text-gray-500 w-4 h-4 mr-2"
-          src="~@/assets/svg/info.svg"
-        />
-      </template>
-      <span class="hidden md:block">Infos</span>
-    </Button>
-    <Button green>
-      <template #icon>
-        <img
-          class="text-gray-500 w-4 h-4 mr-2"
-          src="~@/assets/svg/info.svg"
-        />
-      </template>
-      <span class="hidden md:block">Infos</span>
-    </Button>
-    <Button orange>
-      <template #icon>
-        <img
-          class="text-gray-500 w-4 h-4 mr-2"
-          src="~@/assets/svg/info.svg"
-        />
-      </template>
-      <span class="hidden md:block">Infos</span>
-    </Button>
-    </div>
-    <h2>without icon</h2>
-    <Button>
-      <span class="hidden md:block">Infos</span>
-    </Button>
-    <h2>Disabled Button</h2>
-    <Button disabled>
-      <template #icon>
-        <img
-          class="text-gray-500 w-4 h-4 mr-2"
-          src="~@/assets/svg/unlock.svg"
-        />
-      </template>
-      <span class="hidden md:block">Admin</span>
-    </Button>
-    
-  </div>
+### Colors Button
+```vue live
+const iconSrc = require("@/assets/svg/info.svg")
+
+<Button>
+  <template #icon>
+  <img class="text-gray-500 w-4 h-4 mr-2" :src="iconSrc">
+</template>
+  <span class="hidden md:block">Infos</span>
+</Button>
+<Button red>
+  <template #icon>
+  <img class="text-gray-500 w-4 h-4 mr-2" :src="iconSrc">
+</template>
+  <span class="hidden md:block">Infos</span>
+</Button>
+<Button green>
+  <template #icon>
+  <img class="text-gray-500 w-4 h-4 mr-2" :src="iconSrc">
+</template>
+  <span class="hidden md:block">Infos</span>
+</Button>
+<Button orange>
+  <template #icon>
+  <img class="text-gray-500 w-4 h-4 mr-2" :src="iconSrc">
+</template>
+  <span class="hidden md:block">Infos</span>
+</Button>
+```
+
+### Without Icon
+
+```vue live
+<Button>
+  <span class="hidden md:block">Infos</span>
+</Button>
+```
+
+### Disabled Button
+
+```vue live
+const iconSrc = require("@/assets/svg/info.svg")
+
+<Button disabled>
+  <template #icon>
+  <img class="text-gray-500 w-4 h-4 mr-2" :src="iconSrc">
+</template>
+  <span class="hidden md:block">Admin</span>
+</Button>
+```    
 </docs>

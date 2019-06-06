@@ -12,7 +12,7 @@
     }"
     alt="icon"
     width="50"
-  />
+  >
 </template>
 
 <script>
@@ -50,15 +50,19 @@ export default {
 </script>
 
 <docs>
-<br />
-  <br />
-  <div>
-    <h3>width Icon </h3>
-    <Icon small :src="require('@/assets/mael.jpeg')" />
-    <Icon normal :src="require('@/assets/mael.jpeg')" />
-    <Icon medium :src="require('@/assets/mael.jpeg')" />
-    <Icon large :src="require('@/assets/mael.jpeg')" />
-    <h3>Rounded</h3>
-    <Icon rounded small :src="require('@/assets/mael.jpeg')" />
-  </div>
+### Width Icon
+
+```vue live
+const imgsrc = require('@/assets/mael.jpeg')
+<Icon small :src="imgsrc" />
+<Icon normal :src="imgsrc" />
+<Icon medium :src="imgsrc" />
+<Icon large :src="imgsrc" />
+```
+
+### Rounded
+```vue live
+const imgsrc = require('@/assets/mael.jpeg')
+<Icon rounded small :src="imgsrc" />
+```
 </docs>
